@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Scala map Function
+The map function in Scala is used to transform each element in a collection and return a new collection with the transformed values. It’s a fundamental concept in functional programming.
+
+Why Use map?
+Transformation: Applies a function to every element in a collection.
+Immutable Operations: It does not modify the original collection but returns a new one.
+Eliminates Loops: Reduces the need for for loops, making code cleaner and more readable.
+Works with Parallel Processing: Useful in distributed computing frameworks like Apache Spark.
+</p>
+
+<h4>Scala filter Function</h4>
+The filter function in Scala is used to select elements from a collection that satisfy a given condition. It is useful when you need to remove unwanted data and keep only relevant items.
+
+<b>Why Use filter?</b>
+
+Data Cleaning: Removes unwanted or invalid data.
+Improved Efficiency: Processes only necessary data.
+Eliminates Loops: Avoids traditional for loops, making the code cleaner.
+Useful in Big Data Processing: Widely used in Apache Spark to filter large datasets.
+Use Case: Filtering Orders Based on Status
+Scenario
+You are working with an e-commerce system that stores customer orders. Each order has:
+
+Order ID (Int)
+Customer Name (String)
+Order Status (String): Could be "Shipped", "Processing", or "Cancelled".
+Your task: Extract only the "Shipped" orders
+
+<h4>Scala flatMap Function</h4>
+The flatMap function is a combination of map and flatten. It applies a function to each element in a collection, which itself returns a collection, and then flattens the result into a single list.
+
+Why Use flatMap?
+✅ Removes Nested Structures: Flattens lists of lists into a single list.
+✅ Useful for Data Transformation: Helps break down complex data.
+✅ Common in Spark: Used in distributed data processing (RDD transformations).
+
+Use Case: Tokenizing Sentences into Words
+Scenario
+You are building a text processing system where you have a list of sentences, and you need to extract all the words individually.
+
+
+</body>
+</html>

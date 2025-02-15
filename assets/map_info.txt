@@ -1,0 +1,50 @@
+Scala map Function
+The map function in Scala is used to transform each element in a collection and return a new collection with the transformed values. It’s a fundamental concept in functional programming.
+
+Why Use map?
+Transformation: Applies a function to every element in a collection.
+Immutable Operations: It does not modify the original collection but returns a new one.
+Eliminates Loops: Reduces the need for for loops, making code cleaner and more readable.
+Works with Parallel Processing: Useful in distributed computing frameworks like Apache Spark.
+Use Case: Processing Customer Transactions
+Scenario
+Imagine you are working with an e-commerce company, and you have a list of customer purchases. Each purchase is stored as a tuple containing:
+
+Customer Name (String)
+Amount Spent (Double)
+Your goal is to apply a 10% discount to each purchase.
+
+Solution Using map
+scala
+Copy
+Edit
+object MapExample extends App {
+  // List of customer purchases (customer name, amount spent)
+  val purchases = List(("Alice", 100.0), ("Bob", 150.0), ("Charlie", 200.0))
+
+  // Applying 10% discount using map
+  val discountedPurchases = purchases.map { case (name, amount) =>
+    (name, amount * 0.9)
+  }
+
+  // Printing results
+  println("Original Purchases: " + purchases)
+  println("Discounted Purchases: " + discountedPurchases)
+}
+Output
+
+Original Purchases: List((Alice,100.0), (Bob,150.0), (Charlie,200.0))
+Discounted Purchases: List((Alice,90.0), (Bob,135.0), (Charlie,180.0))
+Breakdown of the Code
+Defining a List of Tuples:
+Each tuple contains a customer’s name and their purchase amount.
+Using map for Transformation:
+The function inside map applies a 10% discount to the purchase amount.
+case (name, amount) => (name, amount * 0.9) extracts and modifies the tuple.
+Returning a New List:
+The original list remains unchanged.
+A new list with discounted values is created.
+Real-World Importance
+Data Processing Pipelines: Used in Spark to transform datasets (RDDs, DataFrames).
+Financial Calculations: Adjusting prices, taxes, and discounts.
+ETL (Extract, Transform, Load): Cleaning and transforming data.
