@@ -4,6 +4,9 @@ object Main {
     println("Hello world!")
 
     topicsExample()
+
+    stringExmaple()
+
   }
 
   private def topicsExample(): Unit = {
@@ -45,4 +48,58 @@ object Main {
     structuredLogs.foreach(println)
   }
 
+
+  private def curryFunctions(): Unit = {
+    def add(x:Int, y:Int) = x+y
+
+    println("Fist type of carry syntax: ==> "+add(20,20))
+
+    def add2(x:Int) = (y:Int) => x+y
+    println("Second second ")
+  }
+
+  private def stringExmaple(): Unit = {
+    val str1: String = "HelloHitesh"
+    val str2: String = "Scala Dev"
+    println(str1)
+
+    println(str1.length)
+    println(str1.concat(str2))
+    println(str1+str2)
+
+    val num1 = 75
+    val num2 = 11.25
+
+    val result = printf("(%d -- %f --- %s)",num1,num2, str1)
+    println(result)
+    println("(%d -- %f --- %s)".format(num1,num2,str1))
+
+    arryExample()
+  }
+
+  private def arryExample(): Unit = {
+    val marksArray : Array[Int] = new Array[Int](4)
+    val newMarksArray = new Array[Int](4)
+
+    marksArray(0)=1;
+    marksArray(1)=12;
+    marksArray(2)=11;
+    marksArray(3)=10;
+    //First way
+    for( x <- newMarksArray){
+      print(x)
+    }
+    //Second way
+    for( i <- marksArray.indices){
+      println(i)
+    }
+
+    val myArray = Array(1,2,3,4,5)
+    val alpabet = Array("Aa","Bb","Cc","Dd")
+
+    val mergeArray = Array.concat(marksArray,newMarksArray)
+    for(m <- mergeArray.indices){
+      println(myArray(m))
+    }
+  }
 }
