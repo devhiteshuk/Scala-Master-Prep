@@ -1,12 +1,17 @@
-
 object Main {
   def main(args: Array[String]): Unit = {
     println("Hello world!")
 
-    topicsExample()
+    //topicsExample()
 
-    stringExmaple()
+    //stringExmaple()
 
+    closureExample()
+    val dog = new Dog()
+    dog.makeSound()
+
+    val str: String = 42  // Implicitly converted
+    println(str.length)  // Output: 2
   }
 
   private def topicsExample(): Unit = {
@@ -29,6 +34,8 @@ object Main {
 
     logParser()
   }
+
+  private implicit def intToString(x: Int): String = x.toString
 
   private def logParser(): Unit = {
     // Sample log entries
@@ -101,5 +108,22 @@ object Main {
     for(m <- mergeArray.indices){
       println(myArray(m))
     }
+  }
+
+  class Animal {
+    def makeSound(): Unit = {
+      println("Animal make sound")
+    }
+  }
+
+  class Dog extends Animal {
+    override def makeSound(): Unit = println("Bark")
+  }
+
+  private def closureExample(): Unit = {
+    var factor = 10
+    factor =3
+    val multiply = (x: Int) => x * factor
+    println(multiply(5))  // Output: 50
   }
 }
